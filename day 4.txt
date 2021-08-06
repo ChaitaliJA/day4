@@ -1,0 +1,300 @@
+1.	How to compare two JSON have the same properties without order?
+a.	var obj1 = { name: "Person 1", age:5 };
+b.	var obj2 = { age:5, name: "Person 1" };
+
+Ans:-        We can use JSON.strinigify() when sequence is same but when the sequence is different, we can use .isEqual method. This method gives us output in Boolean values as true or false.  If values compared are same, we get true as output otherwise we get false. Simple short program is as shown bellow:
+
+var obj1 = { name: "Person 1", age:5 };
+var obj2 = { age:5, name: "Person 1" };
+_.isEqual(obj1, obj2);
+
+
+
+2. Use the rest countries API url -> https://restcountries.eu/rest/v2/all and display all the country     flags in console
+Ans:-        var request= new XMLHttpRequest();
+                 request.open('GET','https://restcountries.eu/rest/v2/all',true);
+                 request.send();
+                request.onload=function(){
+                    var data=JSON.parse(this.response);
+                    for(var i=0;i<=250;i++){
+                             console.log(data[i].flag); 
+                    }
+                 }
+
+
+3.	Use the same rest countries and print all countries name, region, sub region and population
+
+Ans:-        
+
+var request= new XMLHttpRequest();
+request.open('GET','https://restcountries.eu/rest/v2/all',true);
+request.send();
+request.onload=function(){
+         var data=JSON.parse(this.response);
+         for(var i=0;i<=250;i++){
+              console.log(`${data[i].name} : ${data[i].region} : ${data[i].subregion} : ${data[i].population}`); 
+         }
+}
+
+Q4:-
+
+
+Task 1: Simple Programs todo for variables
+1.	Declare four variables without assigning values and print them in console
+
+Ans:-
+
+var a=" ";
+var b= "";
+var c="";
+var d="";
+console.log(a,b,c,d);
+
+output:- 
+
+
+2.How to get value of the variable myvar as output?
+Ans:-
+
+var myvar= 1;
+console.log(myvar);
+
+output:- 1
+
+
+3.Declare variables to store your first name, last name, marital status, country and age in multiple lines
+var firstname="a";
+var lastname="b";
+var maritalstatus="unmarried";
+var country="India";
+var age=24;
+console.log(firstname);
+console.log(lastname);
+console.log(maritalstatus);
+console.log(country);
+console.log(age);
+Output:
+a
+b
+unmarried
+India
+24
+
+4. Declare variables to store your first name, last name, marital status, country and age in a single line
+Ans:-
+var firstname="a";
+var lastname="b";
+var maritalstatus="unmarried";
+var country="India";
+var age=24;
+console.log(firstname,lastname,maritalstatus,country,age);
+Output:
+a b unmarried India 24
+
+5.Declare variables and assign string, boolean, undefined and null data types
+Ans:-
+var firstname="a";
+var ismarried=true;
+var country;
+var age=null;
+
+console.log(typeof(firstname));
+console.log(typeof(ismarried));
+console.log(typeof(country));
+console.log(typeof(age));
+6. Convert the string to integer
+•	parseInt()
+•	Number()
+•	Plus sign(+)
+Ans:-
+var a='3';
+console.log(parseInt(a));
+console.log(+a);
+console.log(Number(a));
+Output:
+3
+3
+3
+
+7. Write 6 statement which provide truthy & falsey values.
+Ans:-
+var a='3';
+console.log(typeof(‘3’));// string
+console.log(typeof(+a));//number
+console.log(typeof(NaN));//number
+console.log(typeof(null));//object
+console.log(a[0]);//3
+console.log(a[1]);//undefined
+
+Task 2: Simple Programs todo for Operators
+1.	Square of a number
+var a=3;
+console.log(a*a);//9
+console.log(Math.pow(3,2));//9
+
+2.	Swapping 2 numbers
+
+var a=3;
+                var b=4;
+                var c;
+                c=a;
+                a=b;
+                 b=c;
+                 console.log("a="+a,"b="+b);//a=4,b=3
+3.	Addition of 3 numbers
+var a=3;
+var b=4;
+var c=5;
+console.log(+(a+b+c));//12
+4.	Celsius to Fahrenheit conversion
+
+var celcius=3;
+var fahrenheit=((celcius*9/5)+32);
+console.log('fahrenheit='+fahrenheit);// fahrenheit=37.4
+
+5.	Meter to miles
+var meter=3;
+var miles=(meter/1,609.344);
+console.log('miles='+miles);
+ Output:
+miles=609.344
+
+6.	Pounds to kg
+
+var pound=5;
+var kg=(pound*0.45359237);
+console.log('kg='+kg);
+Output:
+kg=2.2679618500000003
+
+7.	Calculate Batting Average
+var runs=500;
+var out=7;
+var avg=(runs/out);
+console.log('batting average='+avg);
+Output:
+batting average=71.42857142857143
+
+8.	Calculate five test scores and print their average
+
+var t1=1;
+var t2=2;
+var t3=2;
+var t4=2;
+var t5=2;
+var avg=((t1+t2+t3+t4+t5)/5);
+console.log('average='+avg);
+Output:
+average=1.8
+
+9.	Power of any number x ^ y.
+var x=userinput[0];
+var y=userinput[1];
+console.log(math.pow(x,y));
+10.	calculate Simple Interest
+
+var p=1000;
+var n=2;
+var r=8;
+console.log("simple interest="+(p*n*r/100));
+Output:
+simple interest=160
+
+11.	Calculate area of an equilateral triangle
+var side=1;
+console.log("area="+((Math.sqrt(3)/4*side*side)+"sqcm");
+Output:
+area=0.4330127018922193sqcm
+
+12.	Area Of Isosceles Triangle
+
+var base=1;
+var height=2;
+console.log("area="+(base*height/2)+"sqcm");
+Output:
+area=1sqcm
+
+13.	Volume Of Sphere
+var radius=1;
+console.log("area="+(4*3.14*radius*radius*radius/3)+"Cm^3");
+Output:
+volume=4.1866666666666665Cm^3
+
+14.	Volume Of Prism
+
+var base=1;
+var height=2;
+var altitude=3;
+console.log("volume="+(base*height*altitude/2)+"Cm^3");
+Output:
+volume=3Cm^3
+
+15.	Find area of a triangle.
+var base=1;
+var height=2;
+console.log("area="+(base*height/2));
+Output:
+area=1
+
+16.	Give the Actual cost and Sold cost, Calculate Discount Of Product
+var actual=4;
+var sold=2;
+console.log("discount%="+((actual-sold)/actual*100));
+Output:
+discount%=50
+
+17.	Given their radius of a circle and find its diameter, circumference and area.
+var radius=1;
+var diameter=2*radius;
+var circumference=2*3.14*radius;
+var area=3.14*radius*radius;
+console.log("diameter="+diameter,"circumference="+circumference,"area="+area);
+Output:
+diameter=2 circumference=6.28 area=3.14
+
+18.	Given two numbers and perform all arithmetic operations.
+var a=1;
+var b=3;
+var addition=+(a+b);
+var subtraction=a-b;
+var mult=a*b;
+var divide=a/b;
+console.log("addition="+addition,"subtraction="+subtraction,"multiplication="+mult,"dividation="+divide);
+Output:
+addition=4 subtraction=-2 multiplication=3 dividation=0.3333333333333333
+
+19.	Display the asterisk pattern as shown below(No loop needed):
+*****
+*****
+*****
+*****
+*****
+console.log("*****");
+console.log("*****");
+console.log("*****");
+console.log("*****");
+Output:
+*****
+*****
+*****
+*****
+
+20.	Calculate electricity bill?
+For example, a consumer consumes 100 watts per hour daily for one month. Calculate the total energy bill of that consumer if per unit rate is 10?
+var power=100;
+var days=30;
+var rate=10;
+var electricitybill=power*rate*days;
+console.log("electricity bill=Rs"+electricitybill);
+Output:
+electricity bill=Rs30000
+
+21.	Program To Calculate CGPA
+
+var s1=150;
+var s2=150;
+var percent=(s1+s2)*100/600;
+var cgpa=percent/9.5;
+console.log("CGPA="+Math.round(cgpa));
+Output:
+CGPA=5
